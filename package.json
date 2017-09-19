@@ -1,0 +1,13 @@
+{
+  "name": "Fitbit API Demo",
+  "version": "0.0.0",
+  "description": "A Demo app to show how fitbit api works",
+  "main": "server.js",
+  "repository": "",
+  "author": "Faseeh",
+  "dependencies": {
+    "express": "~3.2.4",
+    "express-session": "^1.14.1",
+    "fitbit-node": "^2.0.1"
+  }
+}
