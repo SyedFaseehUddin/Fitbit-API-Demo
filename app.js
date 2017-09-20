@@ -54,6 +54,17 @@ router.get('/profile.json', function(req, res) {
     }
 });
 
+router.get('/activities.json', function(req, res) {
+    if (req.session.authorized) {
+        client.get("/activities.json", req.session.access_token).then(function (results) {
+            res.json(results[0]);
+        });
+    } else {
+        res.status(403);
+        res.json({ errors: [{ message: 'not authorized' }]});
+    }
+});
+
 router.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function(){
-  console.log('server listening');
+  console.log('server running!');
 });
